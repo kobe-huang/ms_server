@@ -1,0 +1,72 @@
+[08-Apr-2017 17:52:15 Asia/Shanghai] -------
+[08-Apr-2017 17:52:15 Asia/Shanghai] dddd => wewewe
+[08-Apr-2017 17:52:15 Asia/Shanghai] +++++++
+[08-Apr-2017 17:52:15 Asia/Shanghai] +++--+++
+[08-Apr-2017 17:52:15 Asia/Shanghai] PHP Notice:  Undefined index: uniacid in /data/wwwroot/default/sl_base/addons/xsy_resource/test/test_memche.php on line 60
+[08-Apr-2017 17:52:15 Asia/Shanghai] 
+[08-Apr-2017 17:52:15 Asia/Shanghai] 0
+[08-Apr-2017 17:52:15 Asia/Shanghai]   0 => 4
+[08-Apr-2017 17:52:15 Asia/Shanghai]   1 => 书某
+[08-Apr-2017 17:52:15 Asia/Shanghai]   2 => D公司
+[08-Apr-2017 17:52:15 Asia/Shanghai]   3 => 重庆市
+[08-Apr-2017 17:52:15 Asia/Shanghai]   4 => (023)13579135
+[08-Apr-2017 17:52:15 Asia/Shanghai]   5 => sm@php.com
+[08-Apr-2017 17:52:15 Asia/Shanghai] 1
+[08-Apr-2017 17:52:15 Asia/Shanghai]   0 => 5
+[08-Apr-2017 17:52:15 Asia/Shanghai]   1 => huang
+[08-Apr-2017 17:52:15 Asia/Shanghai] ke
+[08-Apr-2017 17:52:15 Asia/Shanghai]     0 => okbe
+[08-Apr-2017 17:52:15 Asia/Shanghai]     1 => tttt
+[08-Apr-2017 17:52:15 Asia/Shanghai]     2 => kkkk
+[08-Apr-2017 17:52:15 Asia/Shanghai] step1
+[08-Apr-2017 17:52:15 Asia/Shanghai] step2
+[08-Apr-2017 17:52:15 Asia/Shanghai] 0
+[08-Apr-2017 17:52:15 Asia/Shanghai]   0 => 4
+[08-Apr-2017 17:52:15 Asia/Shanghai]   1 => 书某
+[08-Apr-2017 17:52:15 Asia/Shanghai]   2 => D公司
+[08-Apr-2017 17:52:15 Asia/Shanghai]   3 => 重庆市
+[08-Apr-2017 17:52:15 Asia/Shanghai]   4 => (023)13579135
+[08-Apr-2017 17:52:15 Asia/Shanghai]   5 => sm@php.com
+[08-Apr-2017 17:52:15 Asia/Shanghai] 1
+[08-Apr-2017 17:52:15 Asia/Shanghai]   0 => 5
+[08-Apr-2017 17:52:15 Asia/Shanghai]   1 => huang
+[08-Apr-2017 17:52:15 Asia/Shanghai] ke
+[08-Apr-2017 17:52:15 Asia/Shanghai]     0 => okbe
+[08-Apr-2017 17:52:15 Asia/Shanghai]     1 => tttt
+[08-Apr-2017 17:52:15 Asia/Shanghai]     2 => kkkk
+[08-Apr-2017 17:58:29 Asia/Shanghai] -------
+[08-Apr-2017 17:58:29 Asia/Shanghai] dddd => wewewe
+[08-Apr-2017 17:58:29 Asia/Shanghai] +++++++
+[08-Apr-2017 17:58:29 Asia/Shanghai] +++--+++
+[08-Apr-2017 17:58:29 Asia/Shanghai] PHP Notice:  Undefined index: uniacid in /data/wwwroot/default/sl_base/addons/xsy_resource/test/test_memche.php on line 60
+[08-Apr-2017 17:58:29 Asia/Shanghai] 
+[08-Apr-2017 17:58:29 Asia/Shanghai] 0
+[08-Apr-2017 17:58:29 Asia/Shanghai]   0 => 4
+[08-Apr-2017 17:58:29 Asia/Shanghai]   1 => 书某
+[08-Apr-2017 17:58:29 Asia/Shanghai]   2 => D公司
+[08-Apr-2017 17:58:29 Asia/Shanghai]   3 => 重庆市
+[08-Apr-2017 17:58:29 Asia/Shanghai]   4 => (023)13579135
+[08-Apr-2017 17:58:29 Asia/Shanghai]   5 => sm@php.com
+[08-Apr-2017 17:58:29 Asia/Shanghai] 1
+[08-Apr-2017 17:58:29 Asia/Shanghai]   0 => 5
+[08-Apr-2017 17:58:29 Asia/Shanghai]   1 => huang
+[08-Apr-2017 17:58:29 Asia/Shanghai]   ke
+[08-Apr-2017 17:58:29 Asia/Shanghai]     0 => okbe
+[08-Apr-2017 17:58:29 Asia/Shanghai]     1 => tttt
+[08-Apr-2017 17:58:29 Asia/Shanghai]     2 => kkkk
+[08-Apr-2017 17:58:29 Asia/Shanghai] step1
+[08-Apr-2017 17:58:29 Asia/Shanghai] step2
+[08-Apr-2017 17:58:29 Asia/Shanghai] 0
+[08-Apr-2017 17:58:29 Asia/Shanghai]   0 => 4
+[08-Apr-2017 17:58:29 Asia/Shanghai]   1 => 书某
+[08-Apr-2017 17:58:29 Asia/Shanghai]   2 => D公司
+[08-Apr-2017 17:58:29 Asia/Shanghai]   3 => 重庆市
+[08-Apr-2017 17:58:29 Asia/Shanghai]   4 => (023)13579135
+[08-Apr-2017 17:58:29 Asia/Shanghai]   5 => sm@php.com
+[08-Apr-2017 17:58:29 Asia/Shanghai] 1
+[08-Apr-2017 17:58:29 Asia/Shanghai]   0 => 5
+[08-Apr-2017 17:58:29 Asia/Shanghai]   1 => huang
+[08-Apr-2017 17:58:29 Asia/Shanghai]   ke
+[08-Apr-2017 17:58:29 Asia/Shanghai]     0 => okbe
+[08-Apr-2017 17:58:29 Asia/Shanghai]     1 => tttt
+[08-Apr-2017 17:58:29 Asia/Shanghai]     2 => kkkk

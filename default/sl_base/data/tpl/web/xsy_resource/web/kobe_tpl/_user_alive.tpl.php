@@ -1,0 +1,132 @@
+<?php defined('IN_IA') or exit('Access Denied');?><?php (!empty($this) && $this instanceof WeModuleSite || 1) ? (include $this->template('web/kobe_tpl/common/kobe_header', TEMPLATE_INCLUDEPATH)) : (include template('web/kobe_tpl/common/kobe_header', TEMPLATE_INCLUDEPATH));?>
+<?php (!empty($this) && $this instanceof WeModuleSite || 1) ? (include $this->template('web/kobe_tpl/user_tree', TEMPLATE_INCLUDEPATH)) : (include template('web/kobe_tpl/user_tree', TEMPLATE_INCLUDEPATH));?>
+<style>
+
+.graph{
+position:relative;
+background-color:#F0EFEF;
+border:1px solid #cccccc;
+padding:2px;
+font-size:13px;
+font-weight:700;
+}
+.graph span{
+    text-align: right;
+    color:#333;
+}
+.graph .orange, .green, .blue, .red, .black{
+position:relative;
+text-align:left;
+color:#ffffff;
+height:18px;
+line-height:18px;
+font-family:Arial;
+display:block;
+}
+.graph .orange{background-color:#ff6600;}
+.graph .green{background-color:#66CC33;}
+.graph .blue{background-color:#3399CC;}
+.graph .red{background-color:red;}
+.graph .black{background-color:#555;}
+</style>
+<div class="clearfix">
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+            <table class="table table-hover" style="overflow: visible;">
+                <thead class="navbar-inner">
+                    <tr>
+                        <th width="5%">ID</th>
+                        <th>用户</th>
+                        <th>序号</th>
+                        <th>型号</th>
+                        <th>脚本</th>
+                        <th>策略</th>
+                        <th>执行时间</th>
+                        <th>进度</th>
+                        <th>查看全部任务</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php  if(is_array($list)) { foreach($list as $row) { ?>
+                    <tr>
+                        <td><?php  echo $row['id'];?></td>
+                        <td><?php  echo $row['account'];?></td>
+                        <td><?php  echo $row['ms_id'];?></td>
+                        <td><?php  echo $row['ms_type'];?></td>
+                        <td><?php  echo $this->_gettaskname($row['running_script_id'])?></td>
+                        <td><?php  echo $this->_getstrategyname($row['strategy_id'])?></td>
+                        <td><?php  echo date('m-d H:i:s', $row['time'])?></td>
+                        <td>
+                            <div class="graph">
+                                <span class="blue" style="width:<?php  echo $this->_getpercent($row['ms_id'])?>%;">&nbsp;<?php  echo $this->_getms_task_index($row['ms_id'])?></span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="btn-default btn btn-default btn-sm"  onclick="return showinfo('<?php  echo $row['ms_id'];?>')">查看运行任务</span>
+                        </td>                        
+                    </tr>
+                    <?php  } } ?>
+                </tbody>
+            </table>
+            <?php  echo $pager;?>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+        #bg{ display: none;  position: fixed;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  background-color: black;  z-index:1001;  -moz-opacity: 0.7;  opacity:.70;  filter: alpha(opacity=70);}
+        #show{display: none;  position: absolute; width: 80%; top:10px;  padding: 8px;  border: 8px solid #E8E9F7;  background-color: white;float: left;  z-index:1002;  overflow: auto;}
+        #showinfo tr th,#showinfo tr td,#loadfahuo tr th{text-align: center;}
+</style>
+
+<div id="bg"></div>
+<div id="show">
+    <table class="table table-striped table-bordered table-condensed" id="showinfo">
+        <tr>
+            <th width="5%">排序</th>
+          <th width="5%">优先级</th>
+          <th width="25%">脚本id</th>
+          <th width="10%">数据id</th>
+          <th width="12%">任务运行时间</th>
+          <th width="12%">运行时间</th>
+        </tr>
+
+
+    </table>
+
+      <button type="reset" class="btn btn-xs btn-success" onclick="hidediv();" style="float:right;">关闭</button>
+
+</div>
+
+
+<script language="javascript" type="text/javascript">
+
+      function showinfo(id) {
+        $("#showinfo tr").eq(0).nextAll().remove();
+        var data="ms_id="+id;
+          $.getJSON("<?php  echo $this->createWebUrl('alive',array(op=>'showinfo'))?>",data, function(json){
+                    $.each(json,function(i,result){
+
+                            item = "<tr><td>"+(i+1)+"</td><td>"+result['task_pri']+"</td><td>"+result['task_id']+"</td><td>"+result['task_d_id']+"</td><td>"+result['task_time']+" s</td><td>"+result['time']+" s</td></tr>"; 
+                        $('#showinfo').append(item); 
+                        $('#showinfo').css('display','');
+                    });
+
+          }); 
+            document.getElementById("bg").style.display ="block";
+            document.getElementById("show").style.display ="block";
+            $('body,html').animate({ scrollTop: 0 }, 200);
+      }
+      function hidediv() {
+            document.getElementById("bg").style.display ='none';
+            document.getElementById("show").style.display ='none';
+            $("#showinfo tr").eq(0).nextAll().remove();
+            $('#showinfo').css('display','none'); 
+
+      }
+
+</script>
+<?php (!empty($this) && $this instanceof WeModuleSite || 1) ? (include $this->template('common/footer', TEMPLATE_INCLUDEPATH)) : (include template('common/footer', TEMPLATE_INCLUDEPATH));?>
+<?php  error_log("end user_alive") ?>

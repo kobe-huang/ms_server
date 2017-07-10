@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="0.6">
+	<application setting="false">
+		<name><![CDATA[脚本管理]]></name>
+		<identifie><![CDATA[xsy_resource]]></identifie>
+		<version><![CDATA[1.0]]></version>
+		<type><![CDATA[services]]></type>
+		<ability><![CDATA[脚本管理器]]></ability>
+		<description><![CDATA[脚本管理器]]></description>
+		<author><![CDATA[gg]]></author>
+		<url><![CDATA[http://bbs.yinke.cc/]]></url>
+	</application>
+	<platform>
+		<subscribes>
+		</subscribes>
+		<handles>
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+	</platform>
+	<bindings>
+		<cover>
+			<entry title="入口" do="index" state="" direct="false" />
+		</cover>
+		<menu>
+			<entry title="脚本管理" do="manager"  state="" direct="false" />
+            <entry title="策略管理" do="strategy"  state="" direct="false" />
+            <entry title="操作日志" do="log"  state="" direct="false" />
+		</menu>
+	</bindings>
+	<permissions>
+	</permissions>
+	
+	<install><![CDATA[
+
+CREATE TABLE IF NOT EXISTS `ims_xsy_resource_file` ( 
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `info` varchar(255) DEFAULT NULL,
+        `owner_id` int(11) DEFAULT NULL,
+        `origin_name` varchar(255) DEFAULT NULL,
+        `name` varchar(255) DEFAULT NULL,
+        `path` varchar(255) DEFAULT NULL,
+        `time` int(11) DEFAULT NULL,
+        PRIMARY KEY (`id`)
+) ENGINE=myisam  DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `ims_xsy_resource_file_log` ( 
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `action` varchar(10) DEFAULT NULL,
+        `script_id` int(11) DEFAULT NULL,
+        `file_name` varchar(255) DEFAULT NULL,
+        `owner_id` int(11) DEFAULT NULL,
+        `time` int(11) DEFAULT NULL,
+        PRIMARY KEY (`id`)
+) ENGINE=myisam  DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `ms_alive_table` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `account` char(64) NOT NULL,
+      `ms_id` char(64) NOT NULL,
+      `ms_type` char(32) NOT NULL,
+      `strategy_id` int(11) NOT NULL  COMMENT 'strategy_id --> strategy_id，kobe增加',
+      `running_script_id` int(11) NOT NULL,
+      `time` int(11) NOT NULL,     
+      `error_info` text DEFAULT NULL COMMENT 'kobe增加错误信息',
+      PRIMARY KEY (`id`)
+) ENGINE=myisam DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `ms_allot_table` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `ms_id` char(64) NOT NULL COMMENT '序列号',
+      `task_list` text NOT NULL,
+      `ms_task_index` int(11) NOT NULL COMMENT '当前任务index，kobe增加',
+      PRIMARY KEY (`id`)
+) ENGINE=myisam DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `ms_strategy` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `owner` int(11) NOT NULL,
+      `full_time` int(11) NOT NULL,
+      `cost` int(11) NOT NULL,
+      `is_ramd` int(11) NOT NULL,
+      `info` varchar(255) CHARACTER SET utf8 NOT NULL,
+       PRIMARY KEY (`id`)  
+) ENGINE=myisam DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS `ms_strategy_task_list` ( 
+  `id` int(11) NOT NULL,
+  `task_id` int(11) NOT NULL,
+  `task_d_id` int(11) NOT NULL,
+  `task_time` int(11) NOT NULL COMMENT 'kobe task --> task',  
+  `task_num` int(11) NOT NULL COMMENT 'kobe task --> task',
+  `task_pri` int(11) NOT NULL COMMENT 'kobe task --> task_sort',
+  `strategy_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`) 
+) ENGINE=myisam DEFAULT CHARSET=utf8;
+
+
+
+
+	]]></install>
+	<uninstall><![CDATA[
+	DROP TABLE IF EXISTS `ims_xsy_resource_file`;
+	DROP TABLE IF EXISTS `ims_xsy_resource_file_log`;
+
+    DROP TABLE IF EXISTS `ms_alive_table`;
+    DROP TABLE IF EXISTS `ms_allot_table`;
+    DROP TABLE IF EXISTS `ms_strategy`;
+    DROP TABLE IF EXISTS `ms_strategy_task_list`;
+	]]></uninstall>
+	<upgrade><![CDATA[]]></upgrade>
+</manifest>

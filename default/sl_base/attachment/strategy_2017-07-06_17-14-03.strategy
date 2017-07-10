@@ -1,0 +1,237 @@
+array (
+  'strategy_info' => 
+  array (
+    'id' => '82',
+    'name' => 's_养号4代_0609',
+    'owner' => '2',
+    'full_time' => '68500',
+    'cost' => '100',
+    'is_ramd' => '1',
+    'idle' => '64',
+    'info' => '微信养号',
+    'temple_name' => '503',
+  ),
+  'strategy_task_info' => 
+  array (
+    0 => 
+    array (
+      'id' => '7200',
+      'task_id' => 'func_时间限制_0523',
+      'task_d_id' => '无',
+      'task_time' => '10',
+      'task_num' => '1',
+      'task_pri' => '1',
+      'strategy_id' => '82',
+    ),
+    1 => 
+    array (
+      'id' => '7216',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_清楚缓存_0427',
+      'task_time' => '50',
+      'task_num' => '1',
+      'task_pri' => '1',
+      'strategy_id' => '82',
+    ),
+    2 => 
+    array (
+      'id' => '7219',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_添加新的朋友3-4次_0615',
+      'task_time' => '300',
+      'task_num' => '1',
+      'task_pri' => '2',
+      'strategy_id' => '82',
+    ),
+    3 => 
+    array (
+      'id' => '7208',
+      'task_id' => '等待一下',
+      'task_d_id' => '无',
+      'task_time' => '4',
+      'task_num' => '10',
+      'task_pri' => '3',
+      'strategy_id' => '82',
+    ),
+    4 => 
+    array (
+      'id' => '7207',
+      'task_id' => '等待30分钟',
+      'task_d_id' => '无',
+      'task_time' => '1800',
+      'task_num' => '12',
+      'task_pri' => '3',
+      'strategy_id' => '82',
+    ),
+    5 => 
+    array (
+      'id' => '7206',
+      'task_id' => 'func_时间限制_0523',
+      'task_d_id' => '无',
+      'task_time' => '10',
+      'task_num' => '5',
+      'task_pri' => '3',
+      'strategy_id' => '82',
+    ),
+    6 => 
+    array (
+      'id' => '7205',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_发文字说说_0504',
+      'task_time' => '60',
+      'task_num' => '1',
+      'task_pri' => '3',
+      'strategy_id' => '82',
+    ),
+    7 => 
+    array (
+      'id' => '7204',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_返回or等待_0523',
+      'task_time' => '10',
+      'task_num' => '10',
+      'task_pri' => '3',
+      'strategy_id' => '82',
+    ),
+    8 => 
+    array (
+      'id' => '7203',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_浏览朋友圈_0504',
+      'task_time' => '300',
+      'task_num' => '1',
+      'task_pri' => '3',
+      'strategy_id' => '82',
+    ),
+    9 => 
+    array (
+      'id' => '7202',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_回复完好友消息_0503',
+      'task_time' => '600',
+      'task_num' => '17',
+      'task_pri' => '3',
+      'strategy_id' => '82',
+    ),
+    10 => 
+    array (
+      'id' => '7201',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_添加新的朋友3-4次_0615',
+      'task_time' => '600',
+      'task_num' => '1',
+      'task_pri' => '3',
+      'strategy_id' => '82',
+    ),
+    11 => 
+    array (
+      'id' => '7215',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_返回or等待_0523',
+      'task_time' => '10',
+      'task_num' => '10',
+      'task_pri' => '4',
+      'strategy_id' => '82',
+    ),
+    12 => 
+    array (
+      'id' => '7214',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_浏览朋友圈_0504',
+      'task_time' => '300',
+      'task_num' => '1',
+      'task_pri' => '4',
+      'strategy_id' => '82',
+    ),
+    13 => 
+    array (
+      'id' => '7213',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_回复完好友消息_0503',
+      'task_time' => '600',
+      'task_num' => '17',
+      'task_pri' => '4',
+      'strategy_id' => '82',
+    ),
+    14 => 
+    array (
+      'id' => '7212',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_添加新的朋友3-4次_0615',
+      'task_time' => '600',
+      'task_num' => '2',
+      'task_pri' => '4',
+      'strategy_id' => '82',
+    ),
+    15 => 
+    array (
+      'id' => '7211',
+      'task_id' => '等待30分钟',
+      'task_d_id' => '无',
+      'task_time' => '1800',
+      'task_num' => '12',
+      'task_pri' => '4',
+      'strategy_id' => '82',
+    ),
+    16 => 
+    array (
+      'id' => '7210',
+      'task_id' => 'func_时间限制_0523',
+      'task_d_id' => '无',
+      'task_time' => '10',
+      'task_num' => '5',
+      'task_pri' => '4',
+      'strategy_id' => '82',
+    ),
+    17 => 
+    array (
+      'id' => '7209',
+      'task_id' => '等待一下',
+      'task_d_id' => '无',
+      'task_time' => '4',
+      'task_num' => '10',
+      'task_pri' => '4',
+      'strategy_id' => '82',
+    ),
+    18 => 
+    array (
+      'id' => '7221',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_站街扫街_0427',
+      'task_time' => '50',
+      'task_num' => '1',
+      'task_pri' => '4',
+      'strategy_id' => '82',
+    ),
+    19 => 
+    array (
+      'id' => '7220',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_添加新的朋友3-4次_0615',
+      'task_time' => '600',
+      'task_num' => '1',
+      'task_pri' => '5',
+      'strategy_id' => '82',
+    ),
+    20 => 
+    array (
+      'id' => '7217',
+      'task_id' => 'func_微信主脚本_0622',
+      'task_d_id' => 'c_清楚缓存_0427',
+      'task_time' => '50',
+      'task_num' => '1',
+      'task_pri' => '6',
+      'strategy_id' => '82',
+    ),
+    21 => 
+    array (
+      'id' => '7218',
+      'task_id' => 'func_时间限制_0523',
+      'task_d_id' => '无',
+      'task_time' => '10',
+      'task_num' => '1',
+      'task_pri' => '7',
+      'strategy_id' => '82',
+    ),
+  ),
+)

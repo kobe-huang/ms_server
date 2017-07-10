@@ -1,0 +1,23 @@
+<ul class="nav nav-tabs">
+
+
+    {if !$_W['role_bool']}
+    <li {if $_GPC['do']=='manager'}class="active"{/if}>
+        <a href="{php echo $this->createWebUrl('manager')}">脚本管理</a>
+    </li>
+    <li {if $_GPC['do']=='strategy'}class="active"{/if}>
+        <a href="{php echo $this->createWebUrl('strategy')}">策略管理</a>
+    </li>
+<!--     <li {if $_GPC['do']=='allot'}class="active"{/if}>
+        <a href="{php echo $this->createWebUrl('allot')}">任务状态</a>
+    </li> -->
+    <li {if $_GPC['do']=='log'}class="active"{/if}>
+        <a href="{php echo $this->createWebUrl('log')}">日志</a>
+    </li>
+    {/if}
+
+
+    <li {if $_GPC['do']=='alive'}class="active"{/if}>
+        <a href="{php echo $this->createWebUrl('alive')}">终端状态</a>
+    </li>
+</ul>

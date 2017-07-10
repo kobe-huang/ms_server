@@ -1,0 +1,73 @@
+{template 'common/header'}
+{template 'web/tree'}
+<!-- <div class="panel panel-info" style="">
+    <div class="panel-heading">筛选</div>
+    <div class="panel-body" style="padding:10px 0 0 10px">
+        <form action="{php echo $this->createWebUrl('log')}" method="get" class="form-horizontal" role="form" id="form1">
+            <input type="hidden" name="c" value="site" /> 
+            <input type="hidden" name="a" value="entry" /> 
+            <input type="hidden" name="m" value="xsy_resource" />
+            <input type="hidden" name="do" id="do" value="log" />
+            <input type="hidden" name="op" id="op" value="search" />
+            <div class="form-group">
+                <label class="col-xs-12 col-sm-1 col-md-1 col-lg-1 control-label">查询</label>
+                <div class="col-sm-5 col-lg-5 col-xs-12">
+                    <input type="text" class="form-control" name="name" value="{$_GPC['name']}" placeholder="原始名称" />
+                </div>
+                <div class="col-sm-1 col-lg-1 col-xs-12">
+                    <button class="btn btn-default">
+                        <i class="fa fa-search"></i>
+                        搜索
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->
+<div class="clearfix">
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+            <table class="table table-hover" style="overflow: visible;">
+                <thead class="navbar-inner">
+                    <tr>
+                        <th>ID</th>
+                        
+                        <th>用户</th>
+                        <th>操作</th>
+                        <th>脚本ID</th>
+                        <th>脚本名称</th>
+                        <th>时间</th>
+
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {loop $list $row}
+                    <tr>
+                        <td>{$row['id']}</td>
+                        <td>{$row['realname']}</td>
+                        <td>
+                        {if $row['action']=='insert'}
+                            上传
+                        {elseif $row['action']=='update'}
+                            修改
+                        {elseif $row['action']=='del'}
+                            删除
+                        {/if}
+                        </td>
+                        <td>{$row['script_id']}</td>
+                        <td>{$row['file_name']}</td>
+                        <td>{php echo date('Y-m-d H:i', $row['time'])}</td>
+                        
+                    </tr>
+                    {/loop}
+                </tbody>
+            </table>
+            {$pager}
+        </div>
+    </div>
+</div>
+
+
+{template 'common/footer'}
