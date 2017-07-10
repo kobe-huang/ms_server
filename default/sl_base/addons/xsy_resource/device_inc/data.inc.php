@@ -31,8 +31,8 @@ $dev_id_rw_info	= array(
 	'task_index' => 0,  //当前任务的序号
 	'task_id'=>0,    	//任务ID给前端使用
 	'time' => 0 ,       //最近一次正常请求时间
-	'token' =>'',               //token
-	'user_id' =>''              //用户的id
+	'token' =>'',       //token
+	'user_id' =>''      //用户的id
 );
 
 $g_info = array(    			//全局的数据

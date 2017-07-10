@@ -447,7 +447,8 @@ class GETTASK {
         $alive_data['ms_id']    =$this->dev_msg['ms_id'];
         $alive_data['ms_type']  =$this->dev_msg['ms_type']; 
         //kobe新加
-        $index = $this->get_dev_new_index($alive_data['user_id']);
+        //$index = $this->get_dev_new_index($alive_data['user_id']);
+        $index = $this->dev_msg['ms_index'];
         log_info("index = " . $index);
         $alive_data['ms_index']    =$index;
         if(empty($ms_id)){//新增
@@ -480,7 +481,7 @@ class GETTASK {
                         'ms_index' => $ms_index ),               
                     array("ms_id"=>$alive_data['ms_id'])              
                 );
-                return $ms_index;
+                return $index;
             }
         }
     }

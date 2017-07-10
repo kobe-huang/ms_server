@@ -41,11 +41,12 @@ display:block;
                     <tr>
                         <th width="4%"><input type="checkbox" class="all_select">全选</th>
                         <th width="3%">ID</th>
+                        <th width="3%">序号</th><!-- kobe新加2017-07-10 11:43:27 -->
                         <th width="7%">用户</th>
                         <th width="10%">序号</th>
                         <th width="4%">型号</th>
                         <th width="9%">IP</th>
-                        <th>脚本</th>
+                       <!--  <th>脚本</th> -->
                         <th>策略</th>
                         <th width="8%">执行时间</th>
                         <th width="12%">进度</th>
@@ -59,6 +60,7 @@ display:block;
                     <tr>
                         <td><input type="checkbox" name="task_dels[]" value="{$row['ms_id']}" class="cbox"></td>
                         <td>{$row['id']}</td>
+                        <td>{$row['ms_index']}</td>   <!-- kobe新加序号，2017-07-10 11:44:22 -->
                         <td>{$row['account']}</td>
                         <td>{$row['ms_id']}</td>
                         <td>{$row['ms_type']}</td>
@@ -68,7 +70,7 @@ display:block;
                             </span>
                         </td>
 
-                        <td>{$row['task_name']}</td>
+                       <!--  <td>{$row['task_name']}</td> -->
                         <td>{$row['strategy_name']}</td>
                         <td>{php echo date('m-d H:i:s', $row['time'])}</td>
                         <td>

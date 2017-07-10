@@ -150,6 +150,8 @@ function get_task_list_by_page($ms_act_device_list, $page_size, $page_index){ //
 			$my_task_list[$i]['task_index'] = $dev_info['task_index'];
 			$my_task_list[$i]['task_num']	= $user_info['task_num'];
 			$my_task_list[$i]['ip'] 		= $dev_info['ip'];
+			$my_task_list[$i]['ms_index'] 		= $dev_info['ms_index']; //kobe新增序号 2017-07-10 11:41:59
+
 			$task_list[] = $my_task_list[$i];
 			
 		}
@@ -199,4 +201,45 @@ function get_task_list_by_all($ms_act_device_list){ //
 	//print_n_array($task_list);
 	log_info("++++".$page_size."-------". $page_index);
 	return $task_list;
+}
+
+//得到用户当前的 配置文件的地址 2017-07-10 12:27:21
+function get_user_config_path($user_id){
+	$realname = pdo_fetchcolumn('SELECT realname FROM '.tablename("mc_members")." where uid=".$user_id);
+	$user_info = memc_get_user_info($realname);
+	if (!empty($user_info)){
+		return $user_info["user_config_path"];
+	}
+	return;
+}
+
+//设置用户配置文件的地址 2017-07-10 12:27:19 
+function set_user_config_path($user_id, $user_config_path){
+	$realname = pdo_fetchcolumn('SELECT realname FROM '.tablename("mc_members")." where uid=".$user_id);
+	if(!empty($realname)){
+		$user_info = memc_get_user_info($realname);
+		if (!empty($user_info)){
+			$user_info["user_config_path"] = $user_config_path;
+			cache_write($realname.'_user_info', $user_info);
+		}
+	}
+	return;
+}
+
+//得到设备当前的 额外数据 2017-07-10 12:27:14
+function get_dev_addition_data($ms_id){	
+	$dev_info =	cache_read($ms_act_device_list[$i]['ms_id'].'_dev_info');
+	if (!empty($dev_info)){
+		return $dev_info["addition_data"];
+	}
+}
+
+//设置设备当前的 额外数据 2017-07-10 12:27:10
+function set_dev_addition_data($ms_id, $addition_data){
+	$dev_info =	cache_read($ms_id.'_dev_info');
+	if (!empty($dev_info)){
+		$dev_info["addition_data"] = $addition_data;
+		cache_write($ms_id.'_dev_info', $dev_info);
+	}
+	return;
 }
