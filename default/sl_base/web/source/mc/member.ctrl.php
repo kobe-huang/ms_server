@@ -688,7 +688,7 @@ for($i=0;$i<$highestColumnNum;$i++){//列
     $data [$filed[$i]]= $row;
 }
     /*kobe将客户的数据包起来*/
-    $is_new_version = false;  
+    $is_new_version = true;  
     if ("user_data_v01" == end($filed) ){
 
         $is_new_version = true;

@@ -228,7 +228,7 @@ function set_user_config_path($user_id, $user_config_path){
 
 //得到设备当前的 额外数据 2017-07-10 12:27:14
 function get_dev_addition_data($ms_id){	
-	$dev_info =	cache_read($ms_act_device_list[$i]['ms_id'].'_dev_info');
+	$dev_info =	cache_read($ms_id.'_dev_info');
 	if (!empty($dev_info)){
 		return $dev_info["addition_data"];
 	}
